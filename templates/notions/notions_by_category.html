@@ -1,0 +1,28 @@
+{% load mptt_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <div class="container">
+        <h1>Посты из категории {{ context.0 }}</h1>
+    </div>
+</section>
+<div>
+    {#    {% recursetree links %}#}
+    {#        {{ children }}#}
+    {#    {% endrecursetree %}#}
+    {% for link in context.1%}
+        {% for i in link %}
+            <div style="display: flex">
+                <h3>{{i.name}}</h3>
+                <h3>{{i.url}}</h3>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -21,5 +21,3 @@ class InstagramAPI:
         for i in api_response_data:
             media_urls.append(i['media_url'])
         return media_urls
-
-

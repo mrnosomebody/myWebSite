@@ -27,8 +27,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
     'resume',
     'notions',
+    'users',
+    'mptt',
+    'django_mptt_admin',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +73,7 @@ WSGI_APPLICATION = 'JustInCase.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'just_in_case',
+        'NAME': 'mrnosomebody',
         'USER': 'postgres',
         'PASSWORD': 'sex',
         'HOST': '127.0.0.1',
