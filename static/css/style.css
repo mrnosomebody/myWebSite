@@ -54,7 +54,7 @@ a {
     font-size: 30px;
     line-height: 1.5;
     letter-spacing: .2rem;
-    display: inline;
+    /*display: inline;*/
     /*background-image: linear-gradient(*/
     /*        transparent 50%,*/
     /*        #e1fffe 50%,*/
@@ -166,6 +166,9 @@ a {
 .item11.card:hover, .item11.card:focus {
     background: #00a8cc;
 }
+.item10.card:hover, .item10.card:focus {
+    color: black;
+}
 
 .content {
     display: flex;
@@ -200,6 +203,10 @@ a {
     }
     .card:empty {
         display: none;
+    }
+
+    .intro {
+        padding: 0 30px 0 30px;
     }
 }
 

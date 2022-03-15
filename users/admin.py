@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_mptt_admin.admin import DjangoMpttAdmin
-from .models import Person, Category, LinksList
+from .models import Person, Category, Link
 
 
 admin.site.register(Person)
@@ -12,5 +12,5 @@ class CategoryAdmin(DjangoMpttAdmin):
 
 
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(LinksList)
+admin.site.register(Link)
 

@@ -7,10 +7,10 @@
 </head>
 <body>
 {% load mptt_tags %}
-<ul>
+<ul style="font-size: 30px; ">
     {% recursetree categories %}
         <li>
-            <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+            <a href="{{ node.get_absolute_url }}" style="text-decoration: none; color: black">{{ node.name }}</a>
             {% if not node.is_leaf_node %}
                 <ul class="children">
                     {{ children }}
