@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LogIn</title>
+    <title>Log In</title>
     <link rel="stylesheet" href="{% static 'css/auth/login/style.css' %}">
 
 </head>
@@ -27,7 +27,7 @@
         <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
         <button>Log In</button>
         <div class="signup">Not a member?
-            <a href="#">SignUp now</a>
+            <a href="{% url 'signup-page' %}">SignUp</a>
         </div>
     </form>
 </div>

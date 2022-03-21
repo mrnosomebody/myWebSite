@@ -4,20 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <title>Mrnosomebody | Notions</title>
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="{% static 'css/notions/style.css' %}">
 </head>
 <body>
 {% load mptt_tags %}
-<ul style="font-size: 30px; ">
-    {% recursetree categories %}
-        <li>
-            <a href="{{ node.get_absolute_url }}" style="text-decoration: none; color: black">{{ node.name }}</a>
-            {% if not node.is_leaf_node %}
-                <ul class="children">
-                    {{ children }}
-                </ul>
-            {% endif %}
-        </li>
-    {% endrecursetree %}
-</ul>
+
+<div class="sidebar">
+    <ul>
+        {% recursetree categories %}
+            <li>
+                <a href="{{ node.get_absolute_url }}" style="text-decoration: none; color: black">{{ node.name }}</a>
+                {% if not node.is_leaf_node %}
+                    <ul class="children">
+                        {{ children }}
+                    </ul>
+                {% endif %}
+            </li>
+        {% endrecursetree %}
+    </ul>
+</div>
+<div class="links">
+    {% for i in links %}
+        <a href="{{ i.url }}" target="_blank">
+            <div class="card">
+                <img src="{{ i.category.icon.url }}" alt="" />
+                <div class="description">
+                    <h2 class="description__name">{{ i.name }}</h2>
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+</div>
 </body>
 </html>

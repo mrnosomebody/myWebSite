@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/auth/login/style.css' %}">
+
+</head>
+<body>
+<div class="content" style="width: 400px;">
+
+    {% for field in form %}
+        {% for error in field.errors %}
+            <li style="color: orangered; text-align: left">{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+    <div class="text">Signup</div>
+    <form action="" method="post">{% csrf_token %}
+        <div class="field">
+            <span class="fas fa-user"></span>
+            <input type="text" required name="username" placeholder="Username">
+        </div>
+        <div class="field">
+            <span class="fas fa-mail-bulk"></span>
+            <input type="email" required name="email" placeholder="E-mail">
+        </div>
+        <div class="field">
+            <span class="fas fa-lock"></span>
+            <input type="password" required name="password1" placeholder="Password">
+        </div>
+        <div class="field">
+            <span class="fas fa-lock"></span>
+            <input type="password" required name="password2" placeholder="Repeat the password">
+        </div>
+        <div class="field">
+            <span class="fas fa-wallet"></span>
+            <input type="text" name="wallet_address" placeholder="Your BEP-20 wallet">
+        </div>
+        <button type="submit">Sign Up</button>
+        <div class="signup">Already have an account?
+            <a href="{% url 'login-page' %}">Login</a>
+        </div>
+{#        {{ form.as_p }}#}
+    </form>
+</div>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>

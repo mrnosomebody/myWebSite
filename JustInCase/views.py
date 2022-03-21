@@ -1,7 +1,7 @@
 from django.contrib.auth import authenticate, login, logout
 
 from django.shortcuts import render, redirect
-
+from users.forms import UserRegisterForm
 
 def index(request):
     return render(request, 'main/index.html')
@@ -31,3 +31,16 @@ def logout_(request):
     return redirect('home')
 
 
+def signup(request):
+    if request.method == 'POST':
+        form = UserRegisterForm(request.POST)
+        print(request.POST)
+        if form.is_valid():
+            user = form.save()
+            print(user.wallet_address)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserRegisterForm()
+
+    return render(request, 'auth/sign_up.html', {'form': form})
