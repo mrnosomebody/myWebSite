@@ -11,19 +11,23 @@
 {% load mptt_tags %}
 
 <div class="sidebar">
+
     <ul>
         {% recursetree categories %}
             <li>
-                <a href="{{ node.get_absolute_url }}" style="text-decoration: none; color: black">{{ node.name }}</a>
+                <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
                 {% if not node.is_leaf_node %}
-                    <ul class="children">
+                    <ul>
                         {{ children }}
                     </ul>
                 {% endif %}
             </li>
         {% endrecursetree %}
     </ul>
+<button class="btn add" onclick="">+</button>
+<button class="btn remove" onclick="">-</button>
 </div>
+
 <div class="links">
     {% for i in links %}
         <a href="{{ i.url }}" target="_blank">

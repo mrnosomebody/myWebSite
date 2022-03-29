@@ -23,9 +23,10 @@ body, html {
 
 body {
     display: flex;
-    background: url("../../images/bg2.jpg") repeat;
+    background: url("../../images/bg1.jpg") repeat;
     padding: 5% 10%;
-    color: hsl(198, 1%, 29%);
+    /*color: hsl(198, 1%, 29%);*/
+    color: black;
     font-family: 'Nunito', serif;
     font-weight: 400;
     font-size: 24px;
@@ -79,7 +80,7 @@ body {
     transition-delay: 0s;
 }
 .card-container .card .content .contextBx h3 {
-    color: #fff;
+    color: #000;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 500;
@@ -122,24 +123,29 @@ img {
 /*================*/
 .tab-outer {
     border-radius: 30px;
+    background-color: rgba(255,255,255,0.3);
     backdrop-filter: blur(15px);
-    box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 -6px 6px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tab-inner {
     position: relative;
     box-shadow: inset 0 0 4px rgba(255, 255, 255, 0),
-    inset 7px 7px 15px rgba(161, 158, 158, 0.15),
-    inset -7px -7px 20px rgb(129, 128, 128),
+    inset 3px 3px 3px rgba(161, 158, 158, 0.15),
+    inset -3px -3px 10px rgb(129, 128, 128),
     0 0 4px rgba(255, 255, 255, .2) !important;
     border-radius: 10px;
-    color: #041821;
+    color: #000;
     font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+ .px-4 {
+     font-size: 30px;
+ }
 
 #social.tab-inner {
     justify-content: unset;
@@ -376,3 +382,10 @@ and (max-device-width : 480px) {
     /*}*/
 }
 
+.wc {
+    width: fit-content;
+    height: fit-content;
+    background: white;
+    border-radius: 15px;
+    box-shadow:  0 5px 15px rgb(0 0 0 / 20%);
+}

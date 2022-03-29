@@ -25,6 +25,7 @@ class Category(MPTTModel):
     slug = models.SlugField(unique=True)
     creator = models.ForeignKey(Person, on_delete=models.PROTECT)
     icon = models.ImageField(upload_to='media/', blank=True)
+
     class Meta:
         verbose_name_plural = 'Categories'
 
