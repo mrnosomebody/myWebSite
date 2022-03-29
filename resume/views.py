@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from services.instagram_api import InstagramAPI
 
 
 def resume(request):

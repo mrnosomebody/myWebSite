@@ -3,3 +3,4 @@ from .views import resume
 urlpatterns = [
     path('', resume, name='resume'),
 ]
+
