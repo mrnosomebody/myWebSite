@@ -7,58 +7,138 @@
     <title>Mrnosomebody</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
 </head>
 <body>
 
+
 <div class="menu">
-    <u><a href="#about">About</a></u>
-    <u><a href="#">Projects</a></u>
-    <u><a href="#">Contact</a></u>
-    <u><a href="{% url 'notions' %}">Bookmarks</a></u>
+    <a href="#about" class="menu-item">
+        <img src="{% static 'images/about.svg' %}" alt="">
+        <span>About</span>
+    </a>
+    <a href="#" class="menu-item">
+        <img src="{% static 'images/prjct.svg' %}" alt="">
+        <span>Projects</span>
+    </a>
+    <a href="#" class="menu-item">
+        <img src="{% static 'images/cntct.svg' %}" alt="">
+        <span>Contact</span>
+    </a>
+    <a href="{% url 'notions' %}" class="menu-item">
+        <img src="{% static 'images/bkmk.svg' %}" alt="">
+        <span>Bookmarks</span>
+    </a>
 </div>
 <section>
 
-        <div class="left">
-            <div class="portfolio-text">
-        <span>Hey, I am</span>
-        Sergey Bezsonov
-        <div class="line"></div>
-        <div class="" style="display: flex">
-            <span style="display: grid;">
-                <li>I'm web developer</li>
-                <li>My main specification is backend</li>
-                <li>I've learned everything myself</li>
-{#                I focus on Web Development, especially the backend.#}
-{#                I have a great passion for making my websites look#}
-{#                cool, so I'm in design as well#}
-            </span>
+    <div class="left">
+        <div class="info">
+            <div class="portfolio-text" style="align-self: flex-end">
+                <h1>Sergey Bezsonov</h1>
+                <h1>Vladivostok, Russia</h1>
+            </div>
+            <div class="line"></div>
+            <div class="portfolio-text" style="justify-self: flex-end;">
+                <h1>Backend Developer</h1>
+                <h1>Mobile Developer</h1>
+            </div>
+            <div class="line"></div>
+            <div class="portfolio-text" style="align-self: flex-start">
+                <h1>Bachelor of Software Engineering</h1>
+                <h1>Far Eastern Federal University</h1>
+            </div>
+            <div class="line"></div>
         </div>
 
+        {#        <img src="{% static 'images/kl.svg' %}" alt="">#}
+        {#            <span style="display: grid;">#}
+        {#                <li>I'm web developer</li>#}
+        {#                <li>My main specification is backend</li>#}
+        {#                <li>I've learned everything myself</li>#}
+        {#            </span>#}
+        <div class="mouse_scroll">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div>
+                <span class="m_scroll_arrows unu"></span>
+                <span class="m_scroll_arrows doi"></span>
+                <span class="m_scroll_arrows trei"></span>
+            </div>
+        </div>
     </div>
-    <div class="mouse_scroll">
-        <div class="mouse">
-            <div class="wheel"></div>
-        </div>
-        <div>
-            <span class="m_scroll_arrows unu"></span>
-            <span class="m_scroll_arrows doi"></span>
-            <span class="m_scroll_arrows trei"></span>
-        </div>
+    <div class="right">
+        <img src="{% static 'images/kl.svg' %}" alt="">
     </div>
-        </div>
-        <div class="right">
-            <img src="{% static 'images/rr.jpg' %}" alt="">
-        </div>
     </div>
 
 </section>
 
-<section>
 
+<section>
     <a id="about"></a>
-    <div class="title">
-        ABOUT
+    <div class="left-about">
+        <div class="item">
+            <img src="{% static 'images/about.svg' %}" alt="">
+            <div class="title">ABOUT</div>
+        </div>
+
+        <div class="text-about">
+            I'm 20 years old, and I am graduating from the university
+            next year. I have no commercial experience, but I practice a lot
+            by creating projects that you can see on
+            <u><a href="https://github.com/mrnosomebody/">my github</a></u>
+        </div>
     </div>
+    <div class="right-about">
+        <div class="text-about"
+             style="width: 45%;padding: 10px; margin-top: 10%;margin-left: -15%;
+                     {#background: rgba(255,255,255,0.7);#}
+                     border: 1px solid hsl(198, 1%, 29%);
+                  background: linear-gradient(rgba(226,222,213,0.9),rgba(226,222,213,0.55));
+              z-index: 3;text-transform: uppercase; font-weight: bold; border-radius: 50px">
+            I'm a big fan of sports. You will meet me on the mountainside, at
+            the hockey arena or at the gym
+        </div>
+        <img src="{% static 'images/sbb.jpg' %}" alt=""
+             style="position:absolute;margin-top: 15%;
+             z-index: 1; border-radius: 15px;height: 550px;">
+    </div>
+</section>
+<section style="display: block">
+    <div class="title">What about skills?</div>
+    <div class="skills">
+        <div class="skill-name">
+            <div class="skill-title">Python</div>
+            <div class="skill-title">Django</div>
+            <div class="skill-title">DRF</div>
+            <div class="skill-title">C++</div>
+            <div class="skill-title">Celery</div>
+            <div class="skill-title">Docker</div>
+            <div class="skill-title">Redis</div>
+        </div>
+
+        <div class="skill-grade">
+            <div class="skill-icon skill-8">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="skill-icon skill-7">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="skill-icon skill-6">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="skill-icon skill-7">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </div>
+    </div>
+
 </section>
 </body>
 

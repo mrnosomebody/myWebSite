@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Gochi+Hand');
 @import url('https://fonts.googleapis.com/css2?family=BioRhyme:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap'); /*--------- Layout -------- */
 *, *:before, *:after {
@@ -30,6 +29,13 @@ body {
 
 }
 
+a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: var(--mainColor);
+}
+
 section {
     min-height: 100vh;
     padding: 3% 5% 5% 5%;
@@ -37,66 +43,211 @@ section {
 }
 
 li {
-     margin-top: 20px
+    margin-top: 20px
 }
 
 .left {
     display: grid;
-    width: 60%;
+    width: 45%;
+    z-index: 3;
 }
 
 .right {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 40%;
-}
-img {
-    width: 400px;
-    height: 600px;
-    border-radius: 15px;
-}
-.menu {
-    margin: 2% 0;
-    position: fixed;
-    padding: 25px;
-    right: 0;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    z-index: 999;
+    align-items: end;
+    width: 55%;
 }
 
+/*img {*/
+/*    width: 400px;*/
+/*    */
+/*    border-radius: 15px;*/
+/*}*/
+.menu {
+    margin: 2% 0;
+    position: absolute;
+    padding: 25px;
+    right: 0;
+    /*writing-mode: vertical-rl;*/
+    /*text-orientation: mixed;*/
+    z-index: 999;
+    display: flex;
+}
+
+.menu span {
+    display: flex;
+    width: fit-content;
+    height: 30px;
+    margin-left: 5px;
+}
+
+
 .menu a {
-    margin: 20px;
+    display: flex;
+    width: fit-content;
+    height: 30px;
+    margin-left: 40px;
     letter-spacing: 2px;
     text-decoration: none;
     color: var(--mainColor);
 }
 
-.portfolio-text {
-    font-size: 90px;
-    width: 100%;
+
+.info {
     display: grid;
+    height: 50%;
+    width: 100%;
 }
 
-.portfolio-text span{
+.portfolio-text {
+    width: fit-content;
+    display: grid;
+    border: 1px solid var(--mainColor);
+    padding: 20px;
+}
+
+.portfolio-text span {
     display: flex;
     justify-content: center;
-    font-size: 40px;
-    width: 85%;
+    font-size: 30px;
+    width: 100%;
 }
-/*.menu a:focus {*/
-/*    text-decoration: line-through 1px var(--mainColor);*/
-/*}*/
+
+.portfolio-text h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 30px;
+
+}
 
 .line {
     border-bottom: groove 1px var(--mainColor);
-    margin: 30px 0 60px 0;
-    width: 90%;
+    margin: 20px 0;
+    width: 100%;
+    height: 1px;
 }
 
+
 .title {
+    /*margin-top: 10%;*/
     font-size: 60px;
+    text-transform: uppercase;
+}
+
+.subtitle {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.left-about {
+    display: grid;
+    width: 45%;
+    margin-top: 10%;
+}
+
+.right-about {
+    display: grid;
+    width: 50%;
+    margin-left: 20%;
+}
+
+.text-about {
+    width: 100%;
+    height: fit-content;
+    font-size: 30px;
+}
+
+.item {
+
+    display: flex;
+}
+
+.item img {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.skill-name {
+    display: grid;
+    width: 20%;
+    /*align-items: center;*/
+    padding: 0 10px;
+}
+
+.skill-title {
+    font-size: 30px;
+    height: 40px;
+}
+
+.skills {
+    display: flex;
+}
+
+.skill-grades {
+    display: grid;
+    padding: 0 10px;
+}
+
+/*=====================================================*/
+.skill-icon {
+    font-size: 0;
+}
+
+.skill-icon span {
+    width: 18px;
+    height: 18px;
+    background: #a9dd75;
+    border: 1px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 12px 6px 30px 0;
+}
+
+
+.skill-0 span:nth-child(n+1) {
+    background: #FFF;
+}
+
+.skill-1 span:nth-child(n+2) {
+    background: #FFF;
+}
+
+.skill-2 span:nth-child(n+3) {
+    background: #FFF;
+}
+
+.skill-3 span:nth-child(n+4) {
+    background: #FFF;
+}
+
+.skill-4 span:nth-child(n+5) {
+    background: #FFF;
+}
+
+.skill-5 span:nth-child(n+6) {
+    background: #FFF;
+}
+
+.skill-6 span:nth-child(n+7) {
+    background: #FFF;
+}
+
+.skill-7 span:nth-child(n+8) {
+    background: #FFF;
+}
+
+.skill-8 span:nth-child(n+9) {
+    background: #FFF;
+}
+
+.skill-9 span:nth-child(n+10) {
+    background: #FFF;
+}
+
+.skill-10 span:nth-child(n+11) {
+    background: #FFF;
 }
 
 /*==============================================*/
