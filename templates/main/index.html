@@ -50,13 +50,6 @@
             </div>
             <div class="line"></div>
         </div>
-
-        {#        <img src="{% static 'images/kl.svg' %}" alt="">#}
-        {#            <span style="display: grid;">#}
-        {#                <li>I'm web developer</li>#}
-        {#                <li>My main specification is backend</li>#}
-        {#                <li>I've learned everything myself</li>#}
-        {#            </span>#}
         <div class="mouse_scroll">
             <div class="mouse">
                 <div class="wheel"></div>
@@ -90,14 +83,21 @@
             by creating projects that you can see on
             <u><a href="https://github.com/mrnosomebody/">my github</a></u>
         </div>
+        <a class="fancy" href="https://github.com/mrnosomebody/">
+            <span class="top-key"></span>
+            <span class="text">explore projects</span>
+            <span class="bottom-key-1"></span>
+            <span class="bottom-key-2"></span>
+        </a>
+
     </div>
     <div class="right-about">
         <div class="text-about"
              style="width: 45%;padding: 10px; margin-top: 10%;margin-left: -15%;
                      {#background: rgba(255,255,255,0.7);#}
                      border: 1px solid hsl(198, 1%, 29%);
-                  background: linear-gradient(rgba(226,222,213,0.9),rgba(226,222,213,0.55));
-              z-index: 3;text-transform: uppercase; font-weight: bold; border-radius: 50px">
+                     background: linear-gradient(rgba(226,222,213,0.9),rgba(226,222,213,0.55));
+                     z-index: 3;text-transform: uppercase; font-weight: bold; border-radius: 50px">
             I'm a big fan of sports. You will meet me on the mountainside, at
             the hockey arena or at the gym
         </div>
@@ -106,38 +106,46 @@
              z-index: 1; border-radius: 15px;height: 550px;">
     </div>
 </section>
-<section style="display: block">
-    <div class="title">What about skills?</div>
-    <div class="skills">
-        <div class="skill-name">
-            <div class="skill-title">Python</div>
-            <div class="skill-title">Django</div>
-            <div class="skill-title">DRF</div>
-            <div class="skill-title">C++</div>
-            <div class="skill-title">Celery</div>
-            <div class="skill-title">Docker</div>
-            <div class="skill-title">Redis</div>
-        </div>
-
-        <div class="skill-grade">
-            <div class="skill-icon skill-8">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="skill-icon skill-7">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="skill-icon skill-6">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-            <div class="skill-icon skill-7">
-                <span></span><span></span><span></span><span></span><span></span>
-                <span></span><span></span><span></span><span></span><span></span>
-            </div>
-        </div>
+<section style="display: grid">
+    <div class="item" style="justify-self: flex-end;height: fit-content;">
+        <img src="{% static 'images/skills.svg' %}" alt="" style="height: 80px">
+        <div class="title">What about skills?</div>
     </div>
+    <div style="display:flex">
+        <div class="block-container">
+            <div class="skills">
+                Web Development
+            </div>
+            <div style="display: flex; flex-wrap: wrap; padding: 0 15% 0 0%;">
+                <div class="skill-name">Python</div>
+                <div class="skill-name">Django</div>
+                <div class="skill-name">DRF</div>
+                <div class="skill-name">Redis</div>
+                <div class="skill-name">Celery</div>
+                <div class="skill-name">Computer networks</div>
+            </div>
+            <div style="margin-top: 10%; margin-left: 40%;width: 100%;">
+                <div class="skills">
+                    Mobile Development
+                </div>
+                <div style="display: flex; margin-left: 20%;">
+                    <div class="skill-name">Dart</div>
+                    <div class="skill-name">Flutter</div>
+                </div>
+            </div>
+
+
+        </div>
+        <img src="{% static 'images/skl.svg' %}" alt="" style="height: 500px">
+        {#        <div class="block-container" style="margin-top: 10%;">#}
+        {#            <div class="skills">#}
+        {#                Mobile Development#}
+        {#            </div>#}
+        {#            <div class="skill-name">Dart</div>#}
+        {#            <div class="skill-name">Flutter</div>#}
+        {#        </div>#}
+    </div>
+
 
 </section>
 </body>

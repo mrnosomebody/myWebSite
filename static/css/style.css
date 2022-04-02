@@ -25,7 +25,7 @@ body {
 
     color: var(--mainColor);
     font-family: 'Nunito', serif;
-    font-size: 26px;
+    font-size: 30px;
 
 }
 
@@ -103,7 +103,7 @@ li {
 .portfolio-text {
     width: fit-content;
     display: grid;
-    border: 1px solid var(--mainColor);
+    border: 2px solid var(--mainColor);
     padding: 20px;
 }
 
@@ -123,7 +123,7 @@ li {
 }
 
 .line {
-    border-bottom: groove 1px var(--mainColor);
+    border-bottom: groove 2px var(--mainColor);
     margin: 20px 0;
     width: 100%;
     height: 1px;
@@ -160,7 +160,6 @@ li {
 }
 
 .item {
-
     display: flex;
 }
 
@@ -169,11 +168,128 @@ li {
     height: 2.5em;
 }
 
+.fancy {
+    background-color: transparent;
+    border: 2px solid var(--mainColor);
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 16px;
+    width: 20em;
+    height: 4em;
+    margin: 5% 0 0;
+}
+
+.fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: var(--mainColor);
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--mainColor);
+}
+
+.fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #e2ded5;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e2ded5;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e2ded5;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+    color: white;
+    background: var(--mainColor);
+}
+
+.fancy:hover::before {
+    width: 0.9375rem;
+    background: white;
+}
+
+.fancy:hover .text {
+    color: white;
+    padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+}
+
+.block-container {
+    width: 50%;
+    display: block;
+}
+
 .skill-name {
-    display: grid;
-    width: 20%;
-    /*align-items: center;*/
-    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    width: fit-content;
+    padding:0 10px;
+    margin: 15px;
+    background-color: rgba(233,127,13,0.2);
+    border-radius: 10px;
 }
 
 .skill-title {
@@ -182,7 +298,16 @@ li {
 }
 
 .skills {
+    font-size: 30px;
+    height: 8vh;
+    width: 70%;
+    border: 3px solid var(--mainColor);
+    /*border-radius: 50%;*/
     display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    margin: 5% 5% 2% 5%;
 }
 
 .skill-grades {
@@ -190,65 +315,6 @@ li {
     padding: 0 10px;
 }
 
-/*=====================================================*/
-.skill-icon {
-    font-size: 0;
-}
-
-.skill-icon span {
-    width: 18px;
-    height: 18px;
-    background: #a9dd75;
-    border: 1px solid #FFF;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 12px 6px 30px 0;
-}
-
-
-.skill-0 span:nth-child(n+1) {
-    background: #FFF;
-}
-
-.skill-1 span:nth-child(n+2) {
-    background: #FFF;
-}
-
-.skill-2 span:nth-child(n+3) {
-    background: #FFF;
-}
-
-.skill-3 span:nth-child(n+4) {
-    background: #FFF;
-}
-
-.skill-4 span:nth-child(n+5) {
-    background: #FFF;
-}
-
-.skill-5 span:nth-child(n+6) {
-    background: #FFF;
-}
-
-.skill-6 span:nth-child(n+7) {
-    background: #FFF;
-}
-
-.skill-7 span:nth-child(n+8) {
-    background: #FFF;
-}
-
-.skill-8 span:nth-child(n+9) {
-    background: #FFF;
-}
-
-.skill-9 span:nth-child(n+10) {
-    background: #FFF;
-}
-
-.skill-10 span:nth-child(n+11) {
-    background: #FFF;
-}
 
 /*==============================================*/
 .mouse_scroll {
