@@ -17,11 +17,11 @@
         <img src="{% static 'images/about.svg' %}" alt="">
         <span>About</span>
     </a>
-    <a href="#" class="menu-item">
+    <a href="#skills" class="menu-item">
         <img src="{% static 'images/prjct.svg' %}" alt="">
-        <span>Projects</span>
+        <span>Skills</span>
     </a>
-    <a href="#" class="menu-item">
+    <a href="#contact" class="menu-item">
         <img src="{% static 'images/cntct.svg' %}" alt="">
         <span>Contact</span>
     </a>
@@ -34,7 +34,7 @@
 
     <div class="left">
         <div class="info">
-            <div class="portfolio-text" style="align-self: flex-end">
+            <div class="portfolio-text" style="align-self: flex-end;margin-top: 5%;">
                 <h1>Sergey Bezsonov</h1>
                 <h1>Vladivostok, Russia</h1>
             </div>
@@ -107,6 +107,7 @@
     </div>
 </section>
 <section style="display: grid">
+    <a id="skills"></a>
     <div class="item" style="justify-self: flex-end;height: fit-content;">
         <img src="{% static 'images/skills.svg' %}" alt="" style="height: 80px">
         <div class="title">What about skills?</div>
@@ -145,7 +146,53 @@
         {#            <div class="skill-name">Flutter</div>#}
         {#        </div>#}
     </div>
+</section>
+{#<section>#}
+{#    <a id="contact"></a>#}
+{#    <img src="{% static 'images/contact.svg' %}" alt=""#}
+{#    style="height: 550px;margin-top: 5%;">#}
+{#    <div class="contact-form">#}
+{#        <form action="" method="post">#}
+{#            {% csrf_token %}#}
+{#            <input type="text" required name="Name" placeholder="Your name/Company name">#}
+{#            <textarea name="message" id="" cols="30" rows="10" placeholder="Your offer"></textarea>#}
+{#        </form>#}
+{#    </div>#}
+{#</section>#}
+<section style="display: grid">
+    <a id="contact"></a>
 
+    <div class="item" style="justify-self: flex-end;height: fit-content;">
+        <img src="{% static 'images/cntct.svg' %}" alt="" style="height: 70px;">
+        <div class="title">contact me</div>
+    </div>
+    <div style="display: flex">
+        <img src="{% static 'images/contact.svg' %}" alt="" style="height: 500px">
+
+        <form class="contact-form" method="post">
+            {% csrf_token %}
+            <div class="form-field">
+                <label class="label" for="name">Name</label>
+                <input name="name" class="input-text js-input" type="text" required>
+
+            </div>
+            <div class="form-field">
+                <label class="label" for="email">Email</label>
+                <input name="email" class="input-text js-input" type="email" required>
+
+            </div>
+            <div class="form-field">
+                <label class="label" for="message">Message</label>
+                <input name="message" class="input-text js-input" type="text" required>
+            </div>
+            <button class="fancy" type="submit">
+                <span class="top-key"></span>
+                <span class="text">send message</span>
+                <span class="bottom-key-1"></span>
+                <span class="bottom-key-2"></span>
+            </button>
+        </form>
+    </div>
 
 </section>
 </body>

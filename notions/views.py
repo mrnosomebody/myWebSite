@@ -8,7 +8,6 @@ def notions_main_page(request):          # если там, откуда при�
     # if request.user.is_authenticated:  # юзер аутентифицирован, то все ок
     categories = Category.objects.all()
     links = Link.objects.all()
-    print(links[0].category.icon.url)
     return render(request, 'notions/notions_main_page.html', {'categories': categories, 'links':links})
     # else:
     #     return redirect('login-page')  # иначе редирект на страницу авторизации

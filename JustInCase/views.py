@@ -3,7 +3,13 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from users.forms import UserRegisterForm
 
+
 def index(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        email = request.POST['email']
+        message = request.POST['message']
+        print(name, email, message)
     return render(request, 'main/index.html')
 
 
@@ -34,10 +40,8 @@ def logout_(request):
 def signup(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
-        print(request.POST)
         if form.is_valid():
             user = form.save()
-            print(user.wallet_address)
             login(request, user)
             return redirect('home')
     else:
