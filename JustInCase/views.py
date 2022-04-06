@@ -6,10 +6,10 @@ from users.forms import UserRegisterForm
 
 def index(request):
     if request.method == 'POST':
-        name = request.POST['name']
+        subject = request.POST['subject']
         email = request.POST['email']
         message = request.POST['message']
-        print(name, email, message)
+        print(subject, email, message)
     return render(request, 'main/index.html')
 
 

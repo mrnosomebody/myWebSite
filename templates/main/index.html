@@ -172,8 +172,8 @@
         <form class="contact-form" method="post">
             {% csrf_token %}
             <div class="form-field">
-                <label class="label" for="name">Name</label>
-                <input name="name" class="input-text js-input" type="text" required>
+                <label class="label" for="subject">Subject</label>
+                <input name="subject" class="input-text js-input" type="text" required>
 
             </div>
             <div class="form-field">
@@ -183,7 +183,7 @@
             </div>
             <div class="form-field">
                 <label class="label" for="message">Message</label>
-                <input name="message" class="input-text js-input" type="text" required>
+                <textarea style="height: 60px;" name="message" class="input-text js-input" type="text" required></textarea>
             </div>
             <button class="fancy" type="submit">
                 <span class="top-key"></span>
