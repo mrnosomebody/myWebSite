@@ -29,7 +29,7 @@ INSTALLED_APPS = [
 
 
     'resume',
-    'notions',
+    'bookmarks',
     'users',
     'mptt',
     'django_mptt_admin',

@@ -8,7 +8,7 @@ from .views import index, login_, logout_, signup
 urlpatterns = [
     path('', index, name='home'),
     path('resume/', include('resume.urls')),
-    path('notions/', include('notions.urls')),
+    path('bookmarks/', include('bookmarks.urls')),
     path('login/', login_, name='login-page'),
     path('logout/', logout_, name='logout-page'),
     path('signup/', signup, name='signup-page'),

@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
-from notions.models import Category, Link, Person
+from bookmarks.models import Category, Link, Person
 from .forms import CategoryAddForm, LinkAddForm
 
 
@@ -15,17 +15,17 @@ def notions_main_page(request):
                 category.creator = creator
                 category.slug = str(category.name).lower()
                 category.save()
-                return redirect('notions')
+                return redirect('bookmarks')
         elif 'addLink' in request.POST:
             link_add_form = LinkAddForm(request.POST)
             if link_add_form.is_valid():
                 link_add_form.save()
-                return redirect('notions')
+                return redirect('bookmarks')
     category_add_form = CategoryAddForm()
     link_add_form = LinkAddForm()
     categories = Category.objects.all()
     links = Link.objects.all()
-    return render(request, 'notions/notions_main_page.html', {'categories': categories, 'links': links})
+    return render(request, 'bookmarks/bookmarks.html', {'categories': categories, 'links': links})
 
 
 def detail(request, slug):
@@ -38,10 +38,10 @@ def detail(request, slug):
         tmp_list.append(links)
     if len(tmp_list) > 0:
         context.append(tmp_list)
-    return render(request, 'notions/notions_by_category.html', {'context': context, 'category': category})
+    return render(request, 'bookmarks/bookmarks_by_category.html', {'context': context, 'category': category})
 
 
 def delete_link(request, link_id):
     link = Link.objects.get(id=link_id)
     link.delete()
-    return redirect('notions')
+    return redirect('bookmarks')
