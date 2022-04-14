@@ -1,5 +1,4 @@
 from django.urls import path, include
-
 from JustInCase.views import login_
 from .views import notions_main_page, detail, delete_link
 

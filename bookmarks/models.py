@@ -20,7 +20,7 @@ class Category(MPTTModel):
                             related_name='children', verbose_name='Parent category')
     slug = models.SlugField(unique=True, blank=True)
     creator = models.ForeignKey(Person, on_delete=models.PROTECT, default=1, blank=True)
-    icon = models.ImageField(upload_to='media/', blank=True, default='default.jpg')
+    icon = models.ImageField(blank=True)
 
     class MPTTMeta:
         order_insertion_by = ['name']
@@ -32,4 +32,4 @@ class Category(MPTTModel):
         return self.name
 
     def get_absolute_url(self):
-        return f'/notions/{self.slug}/'
+        return f'/bookmarks/{self.slug}/'

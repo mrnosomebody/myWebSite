@@ -1,5 +1,4 @@
 from django.contrib.auth import authenticate, login, logout
-
 from django.shortcuts import render, redirect
 from users.forms import UserRegisterForm
 
@@ -46,5 +45,4 @@ def signup(request):
             return redirect('home')
     else:
         form = UserRegisterForm()
-
     return render(request, 'auth/sign_up.html', {'form': form})

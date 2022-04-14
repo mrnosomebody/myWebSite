@@ -13,19 +13,16 @@
 <body>
 {% load mptt_tags %}
 
-<div class="sidebar">
-    <ul>
-        {% recursetree categories %}
-            <li>
-                <a href="{{ node.get_absolute_url }}">{{ node.name }}</a>
-                {% if not node.is_leaf_node %}
-                    <ul>
-                        {{ children }}
-                    </ul>
-                {% endif %}
-            </li>
-        {% endrecursetree %}
-    </ul>
+<div class="categories">
+
+    {% recursetree categories %}
+
+        <a class="category-item" href="{{ node.get_absolute_url }}">{{ node.name }}</a>
+        {% if not node.is_leaf_node %}
+            {{ children }}
+        {% endif %}
+    {% endrecursetree %}
+
     <button class="btn add" id="add_category">Add Category</button>
     <button class="btn add" id="add_link">Add Link</button>
 </div>
@@ -35,13 +32,18 @@
         {% csrf_token %}
         <label for="id_name">Category:</label>
         <input type="text" name="name" maxlength="255" required="" id="id_name">
-        <label for="id_parent">Parent category:</label>
-        <select name="parent" id="id_parent">
-            <option value="" selected="">---------</option>
-            {% for i in categories %}
-                <option value="{{ i.id }}">{{ i.name }}</option>
-            {% endfor %}
-        </select>
+        <label class="drop">
+            <input type="checkbox" id="target-drop-example">
+            <span class="control">Parent</span>
+            <select class="drop-items" name="parent" id="id_parent">
+                <option class="item-drop" value="" selected="">---------</option>
+                {% for i in categories %}
+                    <option class="item-drop" value="{{ i.id }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+            {#            <label for="target-drop-example" class="overlay-close"></label>#}
+        </label>
+        <br>
         <button type="submit" name="addCategory">Submit</button>
         <button id="closeCatPopup" type="button">Close</button>
     </form>
@@ -52,11 +54,17 @@
         <br>
         <label for="id_url">Url:</label>
         <input type="url" name="url" required="" id="id_url">
-        <select name="category" id="id_category" style="margin-bottom: 40px;">
-            {% for i in categories %}
-                <option value="{{ i.id }}">{{ i.name }}</option>
-            {% endfor %}
-        </select>
+        <label class="drop">
+            <input type="checkbox" id="target-drop-example">
+            <span class="control">Parent</span>
+            <select class="drop-items" name="category" id="id_category" style="margin-bottom: 40px;">
+                <option class="item-drop" value="" selected="">---------</option>
+                {% for i in categories %}
+                    <option class="item-drop" value="{{ i.id }}">{{ i.name }}</option>
+                {% endfor %}
+            </select>
+            {#<label for="target-drop-example" class="overlay-close"></label>#}
+        </label>
         <br>
         <button type="submit" name="addLink">Submit</button>
         <button id="closeLinkPopup" type="button">Close</button>
